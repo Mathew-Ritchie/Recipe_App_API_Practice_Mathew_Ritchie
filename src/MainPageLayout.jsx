@@ -1,10 +1,11 @@
 import React from "react";
+import LetterSelector from "./LetterSelector";
 import { Outlet } from "react-router-dom";
 
-export default function MainHeader() {
+export default function MainPageLayout() {
   return (
     <div>
-      <h1 className="text-6xl text-center p-10">My Recipe Book</h1>;
+      <LetterSelector />
       <Outlet />
     </div>
   );

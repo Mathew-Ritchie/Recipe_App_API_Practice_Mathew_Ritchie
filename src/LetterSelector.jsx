@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-const LetterSelector = ({ onSelectLetter }) => {
+export default function LetterSelector() {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-  const [selectedLetter, setSelectedLetter] = useState(null);
-
-  const handleLetterClick = (letter) => {
-    setSelectedLetter(letter);
-    if (onSelectLetter) {
-      onSelectLetter(letter);
-    }
-  };
 
   return (
     <div
@@ -17,24 +10,10 @@ const LetterSelector = ({ onSelectLetter }) => {
       className="mx-10 justify-center mb-10"
     >
       {alphabet.map((letter) => (
-        <button
-          key={letter}
-          onClick={() => handleLetterClick(letter)}
-          style={{
-            padding: "8px 12px",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-            backgroundColor: selectedLetter === letter ? "#007bff" : "#f0f0f0",
-            color: selectedLetter === letter ? "white" : "black",
-            cursor: "pointer",
-            fontWeight: selectedLetter === letter ? "bold" : "normal",
-          }}
-        >
+        <NavLink to={`/${letter}`} key={letter}>
           {letter}
-        </button>
+        </NavLink>
       ))}
     </div>
   );
-};
-
-export default LetterSelector;
+}

@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-
-const API_KEY = "1"; // Using the public test key
-const BASE_URL = `https://www.themealdb.com/api/json/v1/${API_KEY}/`;
-const LETTER_SEARCH = `search.php?f=g`;
+import { useParams } from "react-router-dom";
 
 export default function RecipeCards() {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const { letter } = useParams();
+
+  const API_KEY = "1"; // Using the public test key
+  const BASE_URL = `https://www.themealdb.com/api/json/v1/${API_KEY}/`;
+  const LETTER_SEARCH = `search.php?f=${letter}`;
 
   useEffect(() => {
     const fetchMeals = async () => {
