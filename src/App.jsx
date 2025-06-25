@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import LetterSelector from "./AlphabetSelector.jsx";
 
 const API_KEY = "1"; // Using the public test key
 const BASE_URL = `https://www.themealdb.com/api/json/v1/${API_KEY}/`;
@@ -42,15 +43,17 @@ export default function App() {
 
   return (
     <div>
+      <LetterSelector />
       {meals.length > 0 ? (
-        <div>
+        <div className="flex flex-wrap gap-5">
           {meals.map((meal) => (
-            <div>
-              <h2>{meal.strMeal}</h2>
+            <div key={meal.idMeal} className="w-44 h-72 flex flex-col justify-between items-center">
+              <h2 className="text-green-500 truncate w-44">{meal.strMeal}</h2>
               <img
                 src={meal.strMealThumb}
                 alt={meal.strMeal}
-                style={{ width: "100px", height: "100px", marginRight: "10px" }}
+                // style={{ width: "100px", height: "100px", marginRight: "10px" }}
+                className="w-44 h-44"
               />
               <p>{meal.strCategory}</p>
             </div>
