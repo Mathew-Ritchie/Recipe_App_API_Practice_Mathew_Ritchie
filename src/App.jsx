@@ -8,6 +8,9 @@ import MainPageLayout from "./MainPageLayout";
 import RecipeCards from "./RecipeCards";
 import LetterSelector from "./LetterSelector";
 
+import SelectedRecipe from "./SelectedRecipe";
+import RecipePageLayout from "./RecipePageLayout";
+
 export default function App() {
   return (
     <div>
@@ -15,8 +18,11 @@ export default function App() {
         <Routes>
           <Route path="/" element={<MainHeader />}>
             <Route index element={<LetterSelector />} />
-            <Route path="/:letter" element={<MainPageLayout />}>
+            <Route path="/recipes/:letter" element={<MainPageLayout />}>
               <Route index element={<RecipeCards />} />
+            </Route>
+            <Route path="/recipe/:recipeid" element={<RecipePageLayout />}>
+              <Route index element={<SelectedRecipe />} />
             </Route>
           </Route>
         </Routes>

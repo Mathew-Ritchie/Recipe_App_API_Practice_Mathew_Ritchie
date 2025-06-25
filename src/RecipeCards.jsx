@@ -1,67 +1,47 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import useRecipeStore from "./useRecipeStore";
 
 export default function RecipeCards() {
-  const [meals, setMeals] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
   const { letter } = useParams();
-
-  const API_KEY = "1"; // Using the public test key
-  const BASE_URL = `https://www.themealdb.com/api/json/v1/${API_KEY}/`;
-  const LETTER_SEARCH = `search.php?f=${letter}`;
+  const { meals, loading, error, fetchMealsByLetter } = useRecipeStore();
 
   useEffect(() => {
-    const fetchMeals = async () => {
-      setLoading(true);
-      setError(null);
+    fetchMealsByLetter(letter);
+  }, [letter, fetchMealsByLetter]);
 
-      try {
-        const response = await fetch(`${BASE_URL}${LETTER_SEARCH}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
+  if (loading) {
+    return <h2 className="text-center text-gray-500 text-2xl font-bold pt-20">Loading...</h2>;
+  }
 
-        if (data.meals) {
-          setMeals(data.meals);
-          console.log("Meals starting with 'a' fetched successfully:", data.meals);
-        } else {
-          setMeals([]);
-          console.log("No meals found starting with 'a'.");
-        }
-      } catch (err) {
-        console.error("Error fetching meals:", err);
-        setError("Failed to load meals. Please try again later.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchMeals();
-  }, [LETTER_SEARCH]);
-
+  if (error) {
+    return <h2 className="text-center text-red-500 text-2xl font-bold pt-20">{error}</h2>;
+  }
+  console.log("meals:", meals);
   return (
     <div>
-      {meals.length > 0 ? (
+      {Array.isArray(meals) && meals.length > 0 ? (
         <div className="flex flex-wrap justify-center items-center gap-5 mx-10">
           {meals.map((meal) => (
-            <div key={meal.idMeal} className="w-44 h-72 flex flex-col justify-between items-center">
-              <h2 className="text-green-500 truncate w-44">{meal.strMeal}</h2>
-              <img
-                src={meal.strMealThumb}
-                alt={meal.strMeal}
-                // style={{ width: "100px", height: "100px", marginRight: "10px" }}
-                className="w-44 h-44"
-              />
-              <p>{meal.strCategory}</p>
-            </div>
+            <Link key={meal.idMeal} to={`/recipe/${meal.idMeal}`}>
+              <div className="w-80 h-96 flex flex-col justify-between items-start">
+                <h2 className="text-gray-800 text-3xl font-bold truncate w-80">{meal.strMeal}</h2>
+                <img
+                  src={meal.strMealThumb}
+                  alt={meal.strMeal}
+                  // style={{ width: "100px", height: "100px", marginRight: "10px" }}
+                  className="w-80 h-80"
+                />
+                <p className="text-gray-400">{meal.strArea}</p>
+              </div>
+            </Link>
           ))}
         </div>
       ) : (
-        ""
+        <h1 className="text-center text-gray-500 text-2xl font-bold pt-20">
+          There are no recipes starting with '{letter}' Please pick another letter
+        </h1>
       )}
     </div>
   );
