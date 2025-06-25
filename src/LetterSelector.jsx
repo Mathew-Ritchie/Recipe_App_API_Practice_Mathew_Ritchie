@@ -12,7 +12,10 @@ const LetterSelector = ({ onSelectLetter }) => {
   };
 
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
+    <div
+      style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}
+      className="mx-10 justify-center mb-10"
+    >
       {alphabet.map((letter) => (
         <button
           key={letter}
