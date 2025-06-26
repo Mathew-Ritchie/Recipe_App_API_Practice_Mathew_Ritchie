@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useRecipeStore from "./useRecipeStore";
+import RecipeIngredients from "./RecipeIngredients";
 
 export default function SelectedRecipe() {
   const { recipeid } = useParams();
@@ -33,7 +34,21 @@ export default function SelectedRecipe() {
         alt={selectedRecipe.strMeal}
         className="mx-auto rounded-lg shadow-lg mb-4 w-full max-w-md"
       />
+      <div className="mb-8">
+        <RecipeIngredients recipe={selectedRecipe} />
+      </div>
+      <h2 className="text-3xl font-bold mb-4">Instructions:</h2>
       <p className="text-lg text-gray-700">{selectedRecipe.strInstructions}</p>
+      <div className="mt-8">
+        <a
+          href={selectedRecipe.strYoutube}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+        >
+          Watch on YouTube
+        </a>
+      </div>
     </div>
   );
 }
