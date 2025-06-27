@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import "./App.css";
 
@@ -17,7 +17,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainHeader />}>
-            <Route index element={<LetterSelector />} />
+            <Route index element={<Navigate to="/recipes/a" replace />} />
             <Route path="/recipes/:letter" element={<MainPageLayout />}>
               <Route index element={<RecipeCards />} />
             </Route>

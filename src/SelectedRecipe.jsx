@@ -27,24 +27,23 @@ export default function SelectedRecipe() {
   }
 
   return (
-    <div className="p-10 max-w-4xl mx-auto text-center">
+    <div className=" max-w-4xl mx-auto text-center">
       <h1 className="text-4xl font-bold mb-4">{selectedRecipe.strMeal}</h1>
-      <img
-        src={selectedRecipe.strMealThumb}
-        alt={selectedRecipe.strMeal}
-        className="mx-auto rounded-lg shadow-lg mb-4 w-full max-w-md"
-      />
-      <div className="mb-8">
-        <RecipeIngredients recipe={selectedRecipe} />
+      <div className="flex justify-center gap-11">
+        <img src={selectedRecipe.strMealThumb} alt={selectedRecipe.strMeal} className=" w-98 " />
+        <div className="mb-8">
+          <RecipeIngredients recipe={selectedRecipe} />
+        </div>
       </div>
-      <h2 className="text-3xl font-bold mb-4">Instructions:</h2>
+
+      <h2 className="text-3xl font-bold mb-4 mt-4">Instructions:</h2>
       <p className="text-lg text-gray-700">{selectedRecipe.strInstructions}</p>
       <div className="mt-8">
         <a
           href={selectedRecipe.strYoutube}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+          className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 mb-4"
         >
           Watch on YouTube
         </a>

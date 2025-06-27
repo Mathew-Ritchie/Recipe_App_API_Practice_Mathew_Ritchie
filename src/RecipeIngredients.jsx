@@ -47,8 +47,8 @@ export default function RecipeIngredients({ recipe }) {
   }
 
   return (
-    <div>
-      <h3>Ingredients:</h3>
+    <div className="text-left">
+      <h3 className="font-bold text-xl">Ingredients:</h3>
       <ul>{ingredientsList.length > 0 ? ingredientsList : <li>No ingredients listed.</li>}</ul>
     </div>
   );
