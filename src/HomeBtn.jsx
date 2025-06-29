@@ -8,5 +8,9 @@ export default function HomeBtn() {
     navigate(-1);
   };
 
-  return <button onClick={handleGoBack}>Back</button>;
+  return (
+    <button className="text-3xl text-gray-700 mx-5 pb-4" onClick={handleGoBack}>
+      Back
+    </button>
+  );
 }
