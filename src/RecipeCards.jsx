@@ -20,11 +20,11 @@ export default function RecipeCards() {
   }
   console.log("meals:", meals);
   return (
-    <div>
+    <div className="bg-yellow-50 pt-10">
       {Array.isArray(meals) && meals.length > 0 ? (
         <div className="flex flex-wrap justify-center items-center gap-5 mx-10">
           {meals.map((meal) => (
-            <Link key={meal.idMeal} to={`/recipe/${meal.idMeal}`}>
+            <Link key={meal.idMeal} to={`${meal.idMeal}`}>
               <div className="w-80 h-96 flex flex-col justify-between items-start">
                 <h2 className="text-gray-800 text-3xl font-bold truncate w-80">{meal.strMeal}</h2>
                 <img

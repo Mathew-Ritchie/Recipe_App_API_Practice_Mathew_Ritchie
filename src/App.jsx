@@ -20,9 +20,9 @@ export default function App() {
             <Route index element={<Navigate to="/recipes/a" replace />} />
             <Route path="/recipes/:letter" element={<MainPageLayout />}>
               <Route index element={<RecipeCards />} />
-            </Route>
-            <Route path="/recipe/:recipeid" element={<RecipePageLayout />}>
-              <Route index element={<SelectedRecipe />} />
+              <Route path=":recipeid" element={<RecipePageLayout />}>
+                <Route index element={<SelectedRecipe />} />
+              </Route>
             </Route>
           </Route>
         </Routes>
