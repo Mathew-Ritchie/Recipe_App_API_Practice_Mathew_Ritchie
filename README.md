@@ -1,12 +1,59 @@
-# React + Vite
+# Recipe Finder App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React application that allows users to browse recipes alphabetically using TheMealDB API. It leverages JavaScript, Zustand for state management, and Tailwind CSS for styling.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the App](#running-the-app)
+- [Project Structure](#project-structure)
+- [State Management (Zustand)](#state-management-zustand)
+- [API Integration](#api-integration)
+- [Styling (Tailwind CSS)](#styling-tailwind-css)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Alphabetical Recipe Listing:** Browse recipes by selecting letters of the alphabet.
+- **Dynamic Recipe Display:** View recipe details fetched from TheMealDB API.
+- **Responsive Design:** Optimized for various screen sizes using Tailwind CSS.
+- **Efficient State Management:** Utilizes Zustand for a streamlined and performant state.
+
+## Technologies Used
+
+- **React (JavaScript):** Front-end library for building user interfaces.
+- **Zustand:** A small, fast, and scalable bear-necessities state-management solution.
+- **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
+- **TheMealDB API:** Provides recipe data.
+
+## Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js (LTS version recommended)
+- npm
+
+### Installation
+
+1.  **Clone/fork the repository:**
+
+    The repository for this project can be cloned or forked at https://github.com/Mathew-Ritchie/Recipe_App_API_Practice_Mathew_Ritchie
+
+2.  **Install dependencies:**
+
+    npm install
+
+### Running the App
+
+To start the development server:
+
+    npm run dev
