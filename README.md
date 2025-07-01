@@ -10,12 +10,6 @@ This is a React application that allows users to browse recipes alphabetically u
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Running the App](#running-the-app)
-- [Project Structure](#project-structure)
-- [State Management (Zustand)](#state-management-zustand)
-- [API Integration](#api-integration)
-- [Styling (Tailwind CSS)](#styling-tailwind-css)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -50,10 +44,10 @@ Make sure you have the following installed:
 
 2.  **Install dependencies:**
 
-    npm install
+    `npm install`
 
 ### Running the App
 
 To start the development server:
 
-    npm run dev
+    `npm run dev`
