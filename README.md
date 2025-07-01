@@ -44,10 +44,10 @@ Make sure you have the following installed:
 
 2.  **Install dependencies:**
 
-    `npm install`
+    npm install
 
 ### Running the App
 
 To start the development server:
 
-    ```npm run dev```
+    npm run dev
