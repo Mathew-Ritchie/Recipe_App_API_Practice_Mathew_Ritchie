@@ -9,7 +9,7 @@ export default function HomeBtn() {
   };
 
   return (
-    <button className="text-3xl text-gray-700 mx-5 pb-4" onClick={handleGoBack}>
+    <button className="text-3xl text-gray-700" onClick={handleGoBack}>
       Back
     </button>
   );

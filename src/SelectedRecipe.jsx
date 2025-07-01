@@ -27,8 +27,8 @@ export default function SelectedRecipe() {
   }
 
   return (
-    <div className=" max-w-4xl mx-auto text-center bg-yellow-50 pt-5">
-      <h1 className="text-4xl font-bold mb-4">{selectedRecipe.strMeal}</h1>
+    <div className=" max-w-4xl mx-auto text-center bg-yellow-50">
+      <h1 className="text-4xl font-bold mb-4 pt-5">{selectedRecipe.strMeal}</h1>
       <div className="flex flex-col justify-center gap-5 md:flex-row md:items-start">
         <img
           src={selectedRecipe.strMealThumb}

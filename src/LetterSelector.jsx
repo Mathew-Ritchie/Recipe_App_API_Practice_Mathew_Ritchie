@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { TiSortAlphabeticallyOutline } from "react-icons/ti";
+import { TiSortAlphabeticallyOutline, TiSortAlphabetically } from "react-icons/ti";
+
+import HomeBtn from "./HomeBtn";
 
 export default function LetterSelector() {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -12,15 +14,20 @@ export default function LetterSelector() {
   };
 
   return (
-    <div>
-      <div className="flex justify-end mx-5">
+    <div className="shadow-md pb-5 z-30 relative">
+      <div className="flex justify-between item-center mx-5">
+        <HomeBtn />
         <button onClick={toggleAlphabetVisibility}>
-          <TiSortAlphabeticallyOutline className="text-5xl text-gray-700" />
+          {isAlphabetVisible ? (
+            <TiSortAlphabeticallyOutline className="text-5xl text-gray-700" />
+          ) : (
+            <TiSortAlphabetically className="text-5xl text-gray-700" />
+          )}
         </button>
       </div>
       <div
         style={{ flexWrap: "wrap", gap: "5px" }}
-        className={`mx-10 justify-center mb-10 ${isAlphabetVisible ? "flex" : "hidden"}`}
+        className={`mx-10 justify-center  ${isAlphabetVisible ? "flex" : "hidden"}`}
       >
         {alphabet.map((letter) => (
           <NavLink
