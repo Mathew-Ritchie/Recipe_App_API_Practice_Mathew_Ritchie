@@ -50,4 +50,4 @@ Make sure you have the following installed:
 
 To start the development server:
 
-    `npm run dev`
+    ```npm run dev```
