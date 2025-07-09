@@ -9,8 +9,10 @@ export default function HomeBtn() {
   };
 
   return (
-    <button className="text-3xl text-gray-700" onClick={handleGoBack}>
-      Back
-    </button>
+    <div className="w-screen bg-yellow-300">
+      <button className="text-3xl text-gray-700 py-3 px-5  " onClick={handleGoBack}>
+        Back
+      </button>
+    </div>
   );
 }

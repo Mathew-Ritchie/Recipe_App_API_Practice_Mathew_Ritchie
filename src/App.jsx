@@ -5,11 +5,9 @@ import "./App.css";
 
 import MainHeader from "./MainHeader";
 import MainPageLayout from "./MainPageLayout";
-import RecipeCards from "./RecipeCards";
-import LetterSelector from "./LetterSelector";
-
 import SelectedRecipe from "./SelectedRecipe";
 import RecipePageLayout from "./RecipePageLayout";
+import RecipeCardsLayout from "./recipeCardsLayout";
 
 export default function App() {
   return (
@@ -19,7 +17,7 @@ export default function App() {
           <Route path="/" element={<MainHeader />}>
             <Route index element={<Navigate to="/recipes/a" replace />} />
             <Route path="/recipes/:letter" element={<MainPageLayout />}>
-              <Route index element={<RecipeCards />} />
+              <Route index element={<RecipeCardsLayout />} />
               <Route path=":recipeid" element={<RecipePageLayout />}>
                 <Route index element={<SelectedRecipe />} />
               </Route>

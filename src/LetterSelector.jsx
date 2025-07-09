@@ -14,10 +14,9 @@ export default function LetterSelector() {
   };
 
   return (
-    <div className="shadow-md pb-5 z-30 relative">
-      <div className="flex justify-between item-center mx-5">
-        <HomeBtn />
-        <button onClick={toggleAlphabetVisibility}>
+    <div className="shadow-md  z-30 relative w-screen bg-yellow-300">
+      <div className="flex justify-end item-center mx-5">
+        <button className="py-3" onClick={toggleAlphabetVisibility}>
           {isAlphabetVisible ? (
             <TiSortAlphabeticallyOutline className="text-5xl text-gray-700" />
           ) : (

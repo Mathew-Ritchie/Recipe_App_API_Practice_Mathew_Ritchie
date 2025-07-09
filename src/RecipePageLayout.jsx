@@ -6,6 +6,7 @@ import HomeBtn from "./HomeBtn";
 export default function RecipePageLayout() {
   return (
     <div>
+      <HomeBtn />
       <Outlet />
     </div>
   );
