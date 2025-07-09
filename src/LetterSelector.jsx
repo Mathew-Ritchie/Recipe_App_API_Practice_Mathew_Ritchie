@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { TiSortAlphabeticallyOutline, TiSortAlphabetically } from "react-icons/ti";
 
 import HomeBtn from "./HomeBtn";
+import CategoriesList from "./CategoriesList";
 
 export default function LetterSelector() {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -23,6 +24,7 @@ export default function LetterSelector() {
             <TiSortAlphabetically className="text-5xl text-gray-700" />
           )}
         </button>
+        <CategoriesList />
       </div>
       <div
         style={{ flexWrap: "wrap", gap: "5px" }}

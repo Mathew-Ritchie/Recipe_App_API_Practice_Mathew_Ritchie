@@ -6,6 +6,7 @@ const useRecipeStore = create((set) => ({
   loading: false,
   error: null,
   selectedRecipe: null,
+  categories: [],
 
   fetchMealsByLetter: async (letter) => {
     set({ loading: true, error: null });
@@ -46,6 +47,20 @@ const useRecipeStore = create((set) => ({
       set({ selectedRecipe: meal, loading: false });
     } catch (err) {
       set({ error: "Failed to load recipe details. Please try again.", loading: false });
+    }
+  },
+
+  fetchCategories: async () => {
+    set({ error: null });
+    try {
+      const response = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+      const data = await response.json();
+      set({ categories: Array.isArray(data.categories) ? data.categories : [] });
+    } catch (err) {
+      console.error("Error fetching categories:", err);
+      set({ error: "Failed to load categories. Please try again later." });
     }
   },
 }));
