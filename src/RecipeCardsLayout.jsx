@@ -1,11 +1,12 @@
 import React from "react";
-import LetterSelector from "./LetterSelector";
+import LetterSelector from "./FilterHeader";
 import RecipeCards from "./RecipeCards";
+import FilterHeader from "./FilterHeader";
 
-export default function recipeCardsLayout() {
+export default function RecipeCardsLayout() {
   return (
     <>
-      <LetterSelector />
+      <FilterHeader />
       <RecipeCards />
     </>
   );
