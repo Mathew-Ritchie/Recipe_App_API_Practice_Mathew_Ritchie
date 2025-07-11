@@ -28,7 +28,7 @@ export default function FilterHeader() {
 
   return (
     <div className="shadow-md  z-30 relative w-screen bg-yellow-300">
-      <div className="flex justify-end item-center mx-5">
+      <div className="flex justify-end item-center mx-5 gap-5 px-5">
         <button className="py-3" onClick={toggleAlphabetVisibility}>
           {isAlphabetVisible ? (
             <TiSortAlphabeticallyOutline className="text-5xl text-gray-700" />
@@ -36,7 +36,10 @@ export default function FilterHeader() {
             <TiSortAlphabetically className="text-5xl text-gray-700" />
           )}
         </button>
-        <button onClick={toggleCategoryVisibility}>Categories</button>
+        <p className="text-6xl text-gray-600 font-extralight opacity-40">|</p>
+        <button className="text-3xl text-gray-700 font-bold" onClick={toggleCategoryVisibility}>
+          Categories
+        </button>
       </div>
       <div className={`${isAlphabetVisible ? "flex" : "hidden"}`}>
         <AlphabetSelector toggleAlphabetVisibility={toggleAlphabetVisibility} />

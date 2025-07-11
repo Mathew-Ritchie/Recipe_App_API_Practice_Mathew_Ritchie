@@ -12,7 +12,7 @@ export default function AlphabetSelector({ toggleAlphabetVisibility }) {
           to={`/recipes/${letter}`}
           key={letter}
           className={({ isActive }) =>
-            `py-2 px-4 rounded-md ${
+            `py-2 px-4 rounded-md text-lg ${
               isActive ? "bg-blue-600 text-white font-bold" : "text-gray-500 hover:bg-gray-300"
             }`
           }
