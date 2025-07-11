@@ -7,7 +7,7 @@ import MainHeader from "./MainHeader";
 import MainPageLayout from "./MainPageLayout";
 import SelectedRecipe from "./SelectedRecipe";
 import RecipePageLayout from "./RecipePageLayout";
-import RecipeCardsLayout from "./recipeCardsLayout";
+import RecipeCardsLayout from "./RecipeCardLayout";
 
 export default function App() {
   return (
