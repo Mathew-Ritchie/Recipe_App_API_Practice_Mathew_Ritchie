@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="flex flex-col justify-center items-center text-gray-500">
+    <div className="flex flex-col justify-center items-center text-gray-500 bg-yellow-500">
       <p className="pt-5 ">This site was created by Mathew.J.Ritchie </p>
       <p className=" ">Using THE MEAL DB API. </p>
       <p className="pb-5">
