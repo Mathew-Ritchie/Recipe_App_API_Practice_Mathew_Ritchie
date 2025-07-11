@@ -42,7 +42,7 @@ export default function FilterHeader() {
         <AlphabetSelector toggleAlphabetVisibility={toggleAlphabetVisibility} />
       </div>
       <div className={`${isCategoryVisible ? "flex" : "hidden"}`}>
-        <CategoriesList />
+        <CategoriesList toggleCategoryVisibility={toggleCategoryVisibility} />
       </div>
     </div>
   );

@@ -22,6 +22,12 @@ export default function App() {
                 <Route index element={<SelectedRecipe />} />
               </Route>
             </Route>
+            <Route path="/recipes/category/:category" element={<MainPageLayout />}>
+              <Route index element={<RecipeCardsLayout />} />
+              <Route path=":recipeid" element={<RecipePageLayout />}>
+                <Route index element={<SelectedRecipe />} />
+              </Route>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

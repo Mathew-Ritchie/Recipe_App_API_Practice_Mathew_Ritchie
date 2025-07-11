@@ -27,6 +27,25 @@ const useRecipeStore = create((set) => ({
     }
   },
 
+  fetchMealsByCategory: async (categoryName) => {
+    set({ loading: true, error: null });
+
+    const API_KEY = "1";
+    const BASE_URL = `https://www.themealdb.com/api/json/v1/${API_KEY}/`;
+    const CATEGORY_SEARCH = `filter.php?c=${categoryName}`;
+
+    try {
+      const response = await fetch(`${BASE_URL}${CATEGORY_SEARCH}`);
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+      const data = await response.json();
+      set({ meals: Array.isArray(data.meals) ? data.meals : [], loading: false });
+    } catch (err) {
+      console.error("Error fetching meals:", err);
+      set({ error: "Failed to load meals. Please try again later.", loading: false });
+    }
+  },
+
   fetchMealById: async (id) => {
     set({ loading: true, error: null, selectedMeal: null });
     const API_KEY = "1";

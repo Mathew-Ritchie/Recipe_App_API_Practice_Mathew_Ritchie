@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { useParams, Link } from "react-router-dom";
 import useRecipeStore from "./useRecipeStore";
 
 export default function RecipeCards() {
-  const { letter } = useParams();
-  const { meals, loading, error, fetchMealsByLetter } = useRecipeStore();
+  const { letter, category } = useParams();
+  console.log(category);
+  const { meals, loading, error, fetchMealsByLetter, fetchMealsByCategory } = useRecipeStore();
 
   useEffect(() => {
-    fetchMealsByLetter(letter);
-  }, [letter, fetchMealsByLetter]);
+    if (letter) {
+      fetchMealsByLetter(letter);
+    } else if (category) {
+      fetchMealsByCategory(category);
+    }
+  }, [letter, category, fetchMealsByLetter, fetchMealsByCategory]);
 
   if (loading) {
     return <h2 className="text-center text-gray-500 text-2xl font-bold pt-20">Loading...</h2>;
