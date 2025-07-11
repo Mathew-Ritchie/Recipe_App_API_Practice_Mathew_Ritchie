@@ -1,5 +1,4 @@
 import React from "react";
-import LetterSelector from "./FilterHeader";
 import RecipeCards from "./RecipeCards";
 import FilterHeader from "./FilterHeader";
 
