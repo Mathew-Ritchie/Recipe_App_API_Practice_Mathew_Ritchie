@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { TiSortAlphabeticallyOutline, TiSortAlphabetically } from "react-icons/ti";
 
-import CategoriesList from "./CategoriesList";
-import AlphabetSelector from "./AlphabetSelector";
+import CategoriesList from "../components/CategoriesList";
+import AlphabetSelector from "../components/AlphabetSelector";
 
 export default function FilterHeader() {
   const [isAlphabetVisible, setIsAlphabetVisible] = useState(false);

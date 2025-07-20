@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import useRecipeStore from "./useRecipeStore";
+import useRecipeStore from "../GlobalStore/useRecipeStore";
 
 export default function CategoriesList({ toggleCategoryVisibility }) {
   const { fetchCategories, error, categories } = useRecipeStore();

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useRecipeStore from "./useRecipeStore";
-import RecipeIngredients from "./RecipeIngredients";
+import useRecipeStore from "../GlobalStore/useRecipeStore";
+import RecipeIngredients from "../components/RecipeIngredients";
 
 export default function SelectedRecipe() {
   const { recipeid } = useParams();

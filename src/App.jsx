@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import "./App.css";
 
-import MainHeader from "./MainHeader";
-import MainPageLayout from "./MainPageLayout";
-import SelectedRecipe from "./SelectedRecipe";
-import RecipePageLayout from "./RecipePageLayout";
-import RecipeCardsLayout from "./RecipeCardLayout";
+import MainHeader from "./Headers/MainHeader";
+import MainPageLayout from "./pages-and-layouts/MainPageLayout";
+import SelectedRecipe from "./pages-and-layouts/SelectedRecipe";
+import RecipePageLayout from "./pages-and-layouts/RecipePageLayout";
+import RecipeCardsLayout from "./pages-and-layouts/RecipeCardLayout";
 
 export default function App() {
   return (

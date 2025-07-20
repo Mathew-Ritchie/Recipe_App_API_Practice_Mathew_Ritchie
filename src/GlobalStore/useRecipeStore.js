@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import SelectedRecipe from "./SelectedRecipe";
+import SelectedRecipe from "../pages-and-layouts/SelectedRecipe";
 
 const useRecipeStore = create((set) => ({
   meals: [],

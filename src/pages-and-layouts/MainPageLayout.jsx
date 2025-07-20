@@ -1,12 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Introduction from "./Introduction";
-import ScrollToTopBtn from "./ScrollToTopBtn";
+import Introduction from "../components/Introduction";
+import ScrollToTopBtn from "../components/ScrollToTopBtn";
 
 export default function MainPageLayout() {
   return (
     <div>
-      <Introduction />
       <Outlet />
       <ScrollToTopBtn />
     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import "./App.css";
+import "../App.css";
 import { useParams, Link } from "react-router-dom";
-import useRecipeStore from "./useRecipeStore";
+import useRecipeStore from "../GlobalStore/useRecipeStore";
 
 export default function RecipeCards() {
   const { letter, category } = useParams();
