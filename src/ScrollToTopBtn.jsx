@@ -29,7 +29,7 @@ export default function ScrollToTopBtn() {
     <button
       onClick={scrollToTop}
       className={`
-        fixed bottom-6 right-6 p-4 bg-yellow-700 text-white rounded-full
+        fixed bottom-6 right-6 p-4 bg-blue-500 text-white rounded-full
         shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2
         focus:ring-blue-400 focus:ring-opacity-75 transition-opacity duration-300
         ${isVisible ? "opacity-100 visible" : "opacity-0 invisible"}
